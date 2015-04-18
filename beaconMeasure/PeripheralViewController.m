@@ -7,7 +7,12 @@
 //
 
 #import "PeripheralViewController.h"
+#import "iBeaconPeripheral.h"
 
 @implementation PeripheralViewController
 
+- (IBAction)backToViewController:(id)sender {
+    // 画面を閉じる
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

@@ -7,7 +7,13 @@
 //
 
 #import "CentralViewController.h"
+#import "iBeaconCentral.h"
 
 @implementation CentralViewController
+
+- (IBAction)backToViewController:(id)sender {
+    // 画面を閉じる
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end
