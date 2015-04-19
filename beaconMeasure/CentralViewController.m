@@ -100,13 +100,6 @@
     [alert show];
 }
 
-#pragma mark - other method
-
-- (void)drawNumber:(NSString *)integerString decimalString:(NSString *)decimalString
-{
-    _bmFontView.text = decimalString;
-}
-
 #pragma mark - action
 /**
  戻るボタンをタップしたときのアクション
