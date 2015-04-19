@@ -46,6 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="690" y="914"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="byc-ym-mth">
@@ -207,13 +208,45 @@
                                     <action selector="backToViewController:" destination="Pah-Ss-Bvg" eventType="touchDown" id="wxG-VR-jj0"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jkt-2F-Ydj" customClass="FBBitmapFontView">
+                                <rect key="frame" x="16" y="279" width="568" height="43"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="53B-a7-dtz"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9I-UI-G9U">
+                                <rect key="frame" x="16" y="330" width="568" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="8Ip-HC-MZ9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="START">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="advToggleAction:" destination="Pah-Ss-Bvg" eventType="touchDown" id="qjj-C3-1bY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Jkt-2F-Ydj" secondAttribute="centerY" id="0JM-qc-U3n"/>
                             <constraint firstItem="7TC-eD-t4t" firstAttribute="leading" secondItem="IFw-d3-Btb" secondAttribute="leadingMargin" id="2xC-HA-BWw"/>
+                            <constraint firstItem="g9I-UI-G9U" firstAttribute="top" secondItem="Jkt-2F-Ydj" secondAttribute="bottom" constant="8" id="KH3-Nt-gMx"/>
+                            <constraint firstItem="Jkt-2F-Ydj" firstAttribute="leading" secondItem="IFw-d3-Btb" secondAttribute="leadingMargin" id="SuJ-vw-7i5"/>
                             <constraint firstItem="7TC-eD-t4t" firstAttribute="top" secondItem="wUm-XK-5Rd" secondAttribute="bottom" id="e5P-WW-bfl"/>
+                            <constraint firstAttribute="centerX" secondItem="Jkt-2F-Ydj" secondAttribute="centerX" id="kVW-0x-5qt"/>
+                            <constraint firstItem="g9I-UI-G9U" firstAttribute="leading" secondItem="IFw-d3-Btb" secondAttribute="leadingMargin" id="kdh-JD-Hhi"/>
+                            <constraint firstItem="Jkt-2F-Ydj" firstAttribute="trailing" secondItem="IFw-d3-Btb" secondAttribute="trailingMargin" id="nb2-Zq-0dl"/>
+                            <constraint firstItem="g9I-UI-G9U" firstAttribute="trailing" secondItem="IFw-d3-Btb" secondAttribute="trailingMargin" id="zAz-yJ-385"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="advBtn" destination="g9I-UI-G9U" id="Jxj-NY-6Cm"/>
+                        <outlet property="bmFontView" destination="Jkt-2F-Ydj" id="BgT-JE-Ffc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3P-ii-pZg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
