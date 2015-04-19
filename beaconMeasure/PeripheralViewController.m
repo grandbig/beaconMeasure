@@ -10,7 +10,7 @@
 #import "iBeaconPeripheral.h"
 #import <FBDigitalFont/FBBitmapFontView.h>
 
-@interface PeripheralViewController()
+@interface PeripheralViewController()<iBeaconPeripheralDelegate>
 /// iBeaconPeripheral
 @property (strong, nonatomic) iBeaconPeripheral *peripheral;
 /// BitmapView
@@ -36,9 +36,11 @@
     if(uuid.length > 0 && major.length > 0 && minor.length > 0) {
         // 端末内部に保存したパラメータを使ってiBeaconPeripheralを初期化
         _peripheral = [[iBeaconPeripheral alloc] initWithUUID:uuid major:[major integerValue] minor:[minor integerValue]];
+        _peripheral.delegate = self;
     } else {
         // デフォルトパラメータでiBeaconPeripheralを初期化
         _peripheral = [[iBeaconPeripheral alloc] init];
+        _peripheral.delegate = self;
     }
     
     _flag = NO;
@@ -51,6 +53,19 @@
     _bmFontView.innerGlowSize = 3.0;
     _bmFontView.edgeLength = 3.0;
      
+}
+
+#pragma mark - iBeaconPeripheralDelegate
+// Bluetoothの機能を使えない場合に呼び出される処理
+- (void)didFailToUseBluetooth
+{
+    // アラートの表示
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"確認"
+                                                    message:@"Bluetoothの設定をONにしてください。"
+                                                   delegate:self
+                                          cancelButtonTitle:nil
+                                          otherButtonTitles:@"OK", nil];
+    [alert show];
 }
 
 #pragma mark - other method

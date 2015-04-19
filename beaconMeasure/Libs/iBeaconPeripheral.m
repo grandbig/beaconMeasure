@@ -35,6 +35,7 @@ static NSInteger const defaultMinor = 0;
     return [self initWithUUID:defaultUUID major:defaultMajor minor:defaultMinor];
 }
 
+// iBeaconのプロパティを付与する初期化処理
 - (id)initWithUUID:(NSString *)uuid major:(NSInteger)major minor:(NSInteger)minor
 {
     self = [super init];

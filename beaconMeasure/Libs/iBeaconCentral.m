@@ -7,7 +7,6 @@
 //
 
 #import "iBeaconCentral.h"
-#import <CoreLocation/CoreLocation.h>
 
 // デフォルトのUUID
 static NSString *const defaultUUID = @"33B7DD31-897F-4357-B41E-0F1CE208DBCB";
@@ -143,9 +142,9 @@ static NSString *const defaultUUID = @"33B7DD31-897F-4357-B41E-0F1CE208DBCB";
 // iBeaconレンジングを検知したときに呼び出されるメソッド
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
-    if (beacons.count > 0) {
-        // 1つ以上のiBeacon信号を受信した場合
-        NSLog(@"%@", beacons);
+    if([self.delegate respondsToSelector:@selector(measureBeacons:inRegion:)]) {
+        // measureBeacons:inRegion:デリゲートメソッドを呼び出す
+        [self.delegate measureBeacons:beacons inRegion:region];
     }
 }
 
