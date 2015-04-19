@@ -43,6 +43,7 @@
                         <segue destination="Pah-Ss-Bvg" kind="presentation" identifier="iBeaconPeripheralSegue" modalTransitionStyle="flipHorizontal" id="njy-Sc-hik"/>
                         <segue destination="5rG-8L-ERh" kind="presentation" identifier="SettingSegue" modalTransitionStyle="flipHorizontal" id="Dxj-TY-nwb"/>
                         <segue destination="c1M-A9-DDi" kind="presentation" identifier="infoSegue" modalTransitionStyle="flipHorizontal" id="pd5-x5-aEy"/>
+                        <segue destination="6U2-jT-y6P" kind="presentation" identifier="multiBeaconSegue" modalTransitionStyle="flipHorizontal" id="4cY-dT-apa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -64,7 +65,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PC5-k8-Jvr">
                                 <rect key="frame" x="16" y="84" width="568" height="496"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">******************
+                                <string key="text">******************
 FBDigitalFont
 ******************
 
@@ -113,7 +114,7 @@ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
 FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</mutableString>
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -388,6 +389,44 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</muta
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3P-ii-pZg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1458" y="1658"/>
+        </scene>
+        <!--Multi Central View Controller-->
+        <scene sceneID="MEM-lY-8Ly">
+            <objects>
+                <viewController id="6U2-jT-y6P" customClass="MultiCentralViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3dq-fY-2qi"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZlC-DQ-4Nk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tva-7i-U1F">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG6-cZ-BLY">
+                                <rect key="frame" x="16" y="20" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="FFO-gd-soR"/>
+                                    <constraint firstAttribute="width" constant="48" id="bqP-CY-paP"/>
+                                </constraints>
+                                <state key="normal" image="back.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToViewController:" destination="6U2-jT-y6P" eventType="touchDown" id="ryQ-iD-Cq3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dG6-cZ-BLY" firstAttribute="top" secondItem="3dq-fY-2qi" secondAttribute="bottom" id="3xj-ad-4Hm"/>
+                            <constraint firstItem="dG6-cZ-BLY" firstAttribute="leading" secondItem="Tva-7i-U1F" secondAttribute="leadingMargin" id="gr0-cf-EyI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tcw-Yy-QFL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40" y="1659"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="3XM-tA-hVw">

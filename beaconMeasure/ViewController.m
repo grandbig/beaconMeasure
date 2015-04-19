@@ -42,7 +42,7 @@
     }];
     [menuView addMenuItemWithTitle:@"Search" andIcon:[UIImage imageNamed:@"multiBeacon.png"] andSelectedBlock:^{
         NSLog(@"Search selected");
-        //[self performSegueWithIdentifier:@"SettingSegue" sender:self];
+        [self performSegueWithIdentifier:@"multiBeaconSegue" sender:self];
     }];
     [menuView addMenuItemWithTitle:@"Setting" andIcon:[UIImage imageNamed:@"settings.png"] andSelectedBlock:^{
         NSLog(@"Setting selected");

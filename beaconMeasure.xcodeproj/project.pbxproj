@@ -11,6 +11,7 @@
 		6E2C9F0D1AE3FD8700F04543 /* infoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C9F0C1AE3FD8700F04543 /* infoViewController.m */; };
 		6E2C9F0F1AE3FFAB00F04543 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E2C9F0E1AE3FFAB00F04543 /* info.png */; };
 		6E2C9F121AE406BD00F04543 /* LicenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C9F111AE406BD00F04543 /* LicenceViewController.m */; };
+		6E2C9F151AE40A2700F04543 /* MultiCentralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C9F141AE40A2700F04543 /* MultiCentralViewController.m */; };
 		6E53CE6F1AE15461005567C7 /* CentralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E53CE6E1AE15461005567C7 /* CentralViewController.m */; };
 		6E53CE721AE154C4005567C7 /* PeripheralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E53CE711AE154C4005567C7 /* PeripheralViewController.m */; };
 		6E53CE751AE15508005567C7 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E53CE741AE15508005567C7 /* SettingViewController.m */; };
@@ -52,6 +53,8 @@
 		6E2C9F0E1AE3FFAB00F04543 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		6E2C9F101AE406BD00F04543 /* LicenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LicenceViewController.h; sourceTree = "<group>"; };
 		6E2C9F111AE406BD00F04543 /* LicenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LicenceViewController.m; sourceTree = "<group>"; };
+		6E2C9F131AE40A2700F04543 /* MultiCentralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiCentralViewController.h; sourceTree = "<group>"; };
+		6E2C9F141AE40A2700F04543 /* MultiCentralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiCentralViewController.m; sourceTree = "<group>"; };
 		6E53CE6D1AE15461005567C7 /* CentralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CentralViewController.h; sourceTree = "<group>"; };
 		6E53CE6E1AE15461005567C7 /* CentralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CentralViewController.m; sourceTree = "<group>"; };
 		6E53CE701AE154C4005567C7 /* PeripheralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeripheralViewController.h; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				6E2C9F0C1AE3FD8700F04543 /* infoViewController.m */,
 				6E2C9F101AE406BD00F04543 /* LicenceViewController.h */,
 				6E2C9F111AE406BD00F04543 /* LicenceViewController.m */,
+				6E2C9F131AE40A2700F04543 /* MultiCentralViewController.h */,
+				6E2C9F141AE40A2700F04543 /* MultiCentralViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 				6EA57C751ADA877900D31AC7 /* AppDelegate.m in Sources */,
 				6EA57CE81ADAB8B200D31AC7 /* CHTumblrMenuView.m in Sources */,
 				6E2C9F0D1AE3FD8700F04543 /* infoViewController.m in Sources */,
+				6E2C9F151AE40A2700F04543 /* MultiCentralViewController.m in Sources */,
 				6EA57C721ADA877900D31AC7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
