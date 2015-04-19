@@ -8,11 +8,15 @@
 
 #import "CentralViewController.h"
 #import "iBeaconCentral.h"
+#import <FBDigitalFont/FBBitmapFontView.h>
 
 @interface CentralViewController()<iBeaconCentralDelegate>
 
 /// iBeaconCentral
 @property(strong, nonatomic) iBeaconCentral *central;
+/// BitmapView
+@property (weak, nonatomic) IBOutlet FBBitmapFontView *bmFontView;
+@property (weak, nonatomic) IBOutlet FBBitmapFontView *bmFontView2;
 
 @end
 
@@ -34,6 +38,24 @@
         _central = [[iBeaconCentral alloc] init];
         _central.delegate = self;
     }
+    
+    _bmFontView.text = @"0";
+    _bmFontView.numberOfBottomPaddingDot = 1;
+    _bmFontView.numberOfTopPaddingDot    = 1;
+    _bmFontView.numberOfLeftPaddingDot   = 2;
+    _bmFontView.numberOfRightPaddingDot  = 2;
+    _bmFontView.glowSize = 20.0;
+    _bmFontView.innerGlowSize = 3.0;
+    _bmFontView.edgeLength = 3.0;
+    
+    _bmFontView2.text = @"0000000m";
+    _bmFontView2.numberOfBottomPaddingDot = 1;
+    _bmFontView2.numberOfTopPaddingDot    = 1;
+    _bmFontView2.numberOfLeftPaddingDot   = 2;
+    _bmFontView2.numberOfRightPaddingDot  = 2;
+    _bmFontView2.glowSize = 20.0;
+    _bmFontView2.innerGlowSize = 3.0;
+    _bmFontView2.edgeLength = 3.0;
 }
 
 #pragma mark - iBeaconCentralDelegate
@@ -45,6 +67,24 @@
         CLBeacon *beacon = beacons.firstObject;
         // 距離を取得
         CGFloat distance = beacon.accuracy;
+        NSString *distanceString = [[NSString alloc] initWithFormat:@"%.7f", distance];
+        NSArray *numberArray = [distanceString componentsSeparatedByString:@"."];
+        NSString *integerString, *decimalString;
+        if([numberArray count] == 2) {
+            // 整数と小数がある場合
+            integerString = [numberArray objectAtIndex:0];
+            if([integerString isEqualToString:@"-1"]) {
+                // -1の場合は0に置き換える
+                integerString = @"0";
+            }
+            decimalString = [[NSString alloc] initWithFormat:@"%@m", [numberArray objectAtIndex:1]];
+            _bmFontView.text = integerString;
+            _bmFontView2.text = decimalString;
+        } else {
+            // その他
+            _bmFontView.text = @"0";
+            _bmFontView2.text = @"0000000m";
+        }
     }
 }
 
@@ -58,6 +98,13 @@
                                           cancelButtonTitle:nil
                                           otherButtonTitles:@"OK", nil];
     [alert show];
+}
+
+#pragma mark - other method
+
+- (void)drawNumber:(NSString *)integerString decimalString:(NSString *)decimalString
+{
+    _bmFontView.text = decimalString;
 }
 
 #pragma mark - action
