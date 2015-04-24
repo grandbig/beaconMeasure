@@ -91,13 +91,37 @@
 // 位置情報サービスの機能を利用できない場合に呼び出される処理
 - (void)didFailToUseLocationService
 {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"確認"
+                                                                             message:@"設定画面で位置情報サービスの利用を許可してください。"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        // 何もしない
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"設定" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        // 設定画面へのURLスキーム
+        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        [[UIApplication sharedApplication] openURL:url];
+    }]];
+    
     // アラートの表示
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"確認"
-                                                    message:@"位置情報サービスが利用できません。"
-                                                   delegate:self
-                                          cancelButtonTitle:nil
-                                          otherButtonTitles:@"OK", nil];
-    [alert show];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+// Bluetoothの機能を使えない場合に呼び出される処理
+- (void)didFailToUseBluetooth
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"確認"
+                                                                             message:@"コントロールセンターからBluetoothの利用を許可してください。"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        // 何もしない
+    }]];
+    
+    // アラートの表示
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma mark - action

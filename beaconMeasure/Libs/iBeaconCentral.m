@@ -7,16 +7,18 @@
 //
 
 #import "iBeaconCentral.h"
+#import <CoreBluetooth/CoreBluetooth.h>
 
 // デフォルトのUUID
 static NSString *const defaultUUID = @"33B7DD31-897F-4357-B41E-0F1CE208DBCB";
 
-@interface iBeaconCentral()<CLLocationManagerDelegate>
+@interface iBeaconCentral()<CLLocationManagerDelegate, CBPeripheralManagerDelegate>
 
 @property(strong, nonatomic) CLLocationManager *lm;
 @property(strong, nonatomic) NSUUID *proximityUUID;
 @property(strong, nonatomic) CLBeaconRegion *beaconRegion;
 @property(strong, nonatomic) CLBeacon *beacon;
+@property(strong, nonatomic) CBPeripheralManager *pm;
 
 @end
 
@@ -45,6 +47,10 @@ static NSString *const defaultUUID = @"33B7DD31-897F-4357-B41E-0F1CE208DBCB";
         NSString *bid = [bundle bundleIdentifier];
         // iBeacon領域の設定
         self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID: [[NSUUID alloc] initWithUUIDString:uuid] identifier: bid];
+        
+        // CBPeripheralManagerの初期化
+        self.pm = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil options:nil];
+        self.pm.delegate = self;
         
         // 位置情報の取得許可の設定(settingBeaconメソッドの後に実行する && 必ず実行する必要があるため)
         if ([self.lm respondsToSelector:@selector(requestAlwaysAuthorization)]) {
@@ -152,6 +158,38 @@ static NSString *const defaultUUID = @"33B7DD31-897F-4357-B41E-0F1CE208DBCB";
 - (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error
 {
     // 特に何もしない
+}
+
+#pragma mark - CBPeripheralManagerDelegate
+// iBeacon発信が開始されたときに呼び出されるメソッド
+- (void)peripheralManagerDidStartAdvertising:(CBPeripheralManager *)peripheral error:(NSError *)error
+{
+    // 何もしない
+}
+
+// iBeacon通信が更新したときに呼び出されるメソッド
+- (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral
+{
+    switch (peripheral.state) {
+        case CBPeripheralManagerStatePoweredOff:
+        case CBPeripheralManagerStateResetting:
+        case CBPeripheralManagerStateUnauthorized:
+        case CBPeripheralManagerStateUnsupported:
+        case CBPeripheralManagerStateUnknown:
+        {
+            NSLog(@"Unavailable");
+            if([self.delegate respondsToSelector:@selector(didFailToUseBluetooth)]) {
+                // didFailToUseBluetoothデリゲートメソッドを呼び出す
+                [self.delegate didFailToUseBluetooth];
+            }
+        }
+            break;
+        case CBPeripheralManagerStatePoweredOn:
+            NSLog(@"Available");
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark - other method

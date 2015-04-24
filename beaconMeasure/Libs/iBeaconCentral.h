@@ -23,6 +23,11 @@
  */
 - (void)measureBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region;
 
+/**
+ Bluetoothの機能を使えない場合に呼び出される処理
+ */
+- (void)didFailToUseBluetooth;
+
 @end
 
 @interface iBeaconCentral : NSObject
