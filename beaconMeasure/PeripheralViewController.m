@@ -9,6 +9,7 @@
 #import "PeripheralViewController.h"
 #import "iBeaconPeripheral.h"
 #import <FBDigitalFont/FBBitmapFontView.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface PeripheralViewController()<iBeaconPeripheralDelegate>
 /// iBeaconPeripheral
@@ -93,6 +94,7 @@
     [_peripheral startAdvertising];
     [_advBtn setTitle:NSLocalizedString(@"stopBtn", nil) forState:UIControlStateNormal];
     _flag = YES;
+    [self blinkImage:_bmFontView];
 }
 
 /**
@@ -104,6 +106,29 @@
     [_peripheral stopAdvertising];
     [_advBtn setTitle:NSLocalizedString(@"startBtn", nil) forState:UIControlStateNormal];
     _flag = NO;
+    [self noBlinkImage:_bmFontView];
+}
+
+/**
+ 点滅処理
+ @param target 点滅させたいUIViewオブジェクト
+ */
+- (void)blinkImage:(UIView *)target {
+    CABasicAnimation* animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    animation.duration = 0.5f;
+    animation.autoreverses = YES;
+    animation.repeatCount = HUGE_VAL; //infinite loop -> HUGE_VAL
+    animation.fromValue = [NSNumber numberWithFloat:1.0f]; //MAX opacity
+    animation.toValue = [NSNumber numberWithFloat:0.0f]; //MIN opacity
+    [target.layer addAnimation:animation forKey:@"blink"];
+}
+
+/**
+ 点滅終了処理
+ @param target 点滅を終了させたいUIViewオブジェクト
+ */
+- (void)noBlinkImage:(UIView *)target {
+    [target.layer removeAnimationForKey:@"blink"];
 }
 
 #pragma mark - action
@@ -112,6 +137,12 @@
  @param sender アクション
  */
 - (IBAction)backToViewController:(id)sender {
+    // iBeaconの発信状態を取得
+    BOOL isAdvertising = [_peripheral isAdvertising];
+    if(isAdvertising) {
+        [_peripheral stopAdvertising];
+    }
+    
     // 画面を閉じる
     [self dismissViewControllerAnimated:YES completion:nil];
 }

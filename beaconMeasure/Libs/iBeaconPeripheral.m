@@ -71,6 +71,12 @@ static NSInteger const defaultMinor = 0;
     [self.pm stopAdvertising];
 }
 
+// iBeacon信号の発信状態を返却する処理
+- (BOOL)isAdvertising
+{
+    return self.pm.isAdvertising;
+}
+
 #pragma mark - CBPeripheralManagerDelegate
 // iBeacon発信が開始されたときに呼び出されるメソッド
 - (void)peripheralManagerDidStartAdvertising:(CBPeripheralManager *)peripheral error:(NSError *)error
