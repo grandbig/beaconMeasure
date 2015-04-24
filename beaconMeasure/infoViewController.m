@@ -26,7 +26,7 @@
     
     _infoTableView.delegate = self;
     _infoTableView.dataSource = self;
-    _titleArray = @[@"How to use this app", @"Licence"];
+    _titleArray = @[@"Licence"];
 }
 
 #pragma mark - tableViewDelegate
