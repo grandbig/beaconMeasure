@@ -29,6 +29,7 @@
     _titleArray = @[@"How to use this app", @"Licence"];
 }
 
+#pragma mark - tableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 2;

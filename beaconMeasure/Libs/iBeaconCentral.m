@@ -154,4 +154,25 @@ static NSString *const defaultUUID = @"33B7DD31-897F-4357-B41E-0F1CE208DBCB";
     // 特に何もしない
 }
 
+#pragma mark - other method
+// レンジング開始処理
+- (void)startRangingBeacons
+{
+    // レンジング対象を取得
+    NSSet *ranging = [self.lm rangedRegions];
+    
+    if (ranging==nil || ranging.count==0) {
+        // レンジング対象がない場合
+        // iBeaconレンジングを開始
+        [self.lm startRangingBeaconsInRegion:self.beaconRegion];
+    }
+}
+
+// レンジング終了処理
+- (void)stopRangingBeacons
+{
+    // レンジングの終了
+    [self.lm stopRangingBeaconsInRegion:self.beaconRegion];
+}
+
 @end

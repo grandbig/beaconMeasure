@@ -16,6 +16,8 @@
 		6E53CE721AE154C4005567C7 /* PeripheralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E53CE711AE154C4005567C7 /* PeripheralViewController.m */; };
 		6E53CE751AE15508005567C7 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E53CE741AE15508005567C7 /* SettingViewController.m */; };
 		6E53CE771AE25E83005567C7 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E53CE761AE25E83005567C7 /* back.png */; };
+		6EA2D9DC1AEA053100E535A4 /* update.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EA2D9DB1AEA053100E535A4 /* update.png */; };
+		6EA2D9DE1AEA1AE800E535A4 /* antenna.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6EA2D9DD1AEA1AE800E535A4 /* antenna.gif */; };
 		6EA57C721ADA877900D31AC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA57C711ADA877900D31AC7 /* main.m */; };
 		6EA57C751ADA877900D31AC7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA57C741ADA877900D31AC7 /* AppDelegate.m */; };
 		6EA57C781ADA877900D31AC7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA57C771ADA877900D31AC7 /* ViewController.m */; };
@@ -62,6 +64,8 @@
 		6E53CE731AE15508005567C7 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		6E53CE741AE15508005567C7 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		6E53CE761AE25E83005567C7 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		6EA2D9DB1AEA053100E535A4 /* update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = update.png; sourceTree = "<group>"; };
+		6EA2D9DD1AEA1AE800E535A4 /* antenna.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = antenna.gif; sourceTree = "<group>"; };
 		6EA57C6C1ADA877800D31AC7 /* beaconMeasure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = beaconMeasure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EA57C701ADA877900D31AC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EA57C711ADA877900D31AC7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -228,6 +232,8 @@
 		6EA57CA41ADAB5BC00D31AC7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6EA2D9DD1AEA1AE800E535A4 /* antenna.gif */,
+				6EA2D9DB1AEA053100E535A4 /* update.png */,
 				6E2C9F0E1AE3FFAB00F04543 /* info.png */,
 				6E12D0671AE3FB76000EE4E4 /* multiBeacon.png */,
 				6E53CE761AE25E83005567C7 /* back.png */,
@@ -339,9 +345,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EA2D9DE1AEA1AE800E535A4 /* antenna.gif in Resources */,
 				6EA57CF01ADAC1BD00D31AC7 /* central.png in Resources */,
 				6E2C9F0F1AE3FFAB00F04543 /* info.png in Resources */,
 				6EA57CEE1ADABF8300D31AC7 /* peripheral.png in Resources */,
+				6EA2D9DC1AEA053100E535A4 /* update.png in Resources */,
 				6EA57C7B1ADA877900D31AC7 /* Main.storyboard in Resources */,
 				6E12D0681AE3FB76000EE4E4 /* multiBeacon.png in Resources */,
 				6EA57C801ADA877900D31AC7 /* LaunchScreen.xib in Resources */,
