@@ -21,8 +21,8 @@
 @property (strong, nonatomic) NSMutableArray *titleArray;
 /// 各セルのサブタイトルを保存する配列
 @property (strong, nonatomic) NSMutableArray *subTitleArray;
-/// カウント数
-@property (assign, nonatomic) NSInteger cnt;
+/// UIRefreshControl
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -48,7 +48,14 @@
     // テーブルビューのデリゲート設定
     _multiBeaconTableView.delegate = self;
     _multiBeaconTableView.dataSource = self;
-    _cnt = 0;
+    
+    // UIRefreshControl の初期化
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    _refreshControl = refreshControl;
+    [refreshControl addTarget:self action:@selector(refreshOccured:) forControlEvents:UIControlEventValueChanged];
+    // tableViewの中身が空の場合でも UIRefreshControl を使えるようにする
+    _multiBeaconTableView.alwaysBounceVertical = YES;
+    [_multiBeaconTableView addSubview:refreshControl];
 }
 
 #pragma mark - iBeaconCentralDelegate
@@ -75,8 +82,6 @@
         [_central stopRangingBeacons];
         // テーブルビューの更新
         [_multiBeaconTableView reloadData];
-        _cnt++;
-        NSLog(@"cnt: %ld", (long)_cnt);
     }
 }
 
@@ -118,6 +123,13 @@
     return cell;
 }
 
+// セルが選択された場合の処理
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // セルの選択状態を解除
+    [_multiBeaconTableView deselectRowAtIndexPath:[_multiBeaconTableView indexPathForSelectedRow] animated:NO];
+}
+
 #pragma mark - action
 /**
  戻るボタンをタップしたときのアクション
@@ -135,6 +147,13 @@
 - (IBAction)updateTableView:(id)sender {
     // iBeaconのレンジング開始処理
     [_central startRangingBeacons];
+}
+
+- (void)refreshOccured:(id)sender
+{
+    // iBeaconのレンジング開始処理
+    [_central startRangingBeacons];
+    [self.refreshControl endRefreshing];
 }
 
 #pragma mark - other method

@@ -38,6 +38,7 @@
                             <constraint firstAttribute="centerX" secondItem="0Xg-ef-sbc" secondAttribute="centerX" id="a1A-5P-j0v"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <segue destination="je9-0N-vQf" kind="presentation" identifier="iBeaconCentralSegue" modalTransitionStyle="flipHorizontal" id="MEw-bK-RqR"/>
                         <segue destination="Pah-Ss-Bvg" kind="presentation" identifier="iBeaconPeripheralSegue" modalTransitionStyle="flipHorizontal" id="njy-Sc-hik"/>
