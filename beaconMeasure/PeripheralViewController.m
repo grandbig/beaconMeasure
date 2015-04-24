@@ -59,13 +59,16 @@
 // Bluetoothの機能を使えない場合に呼び出される処理
 - (void)didFailToUseBluetooth
 {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"確認"
+                                                                             message:@"コントロールセンターからBluetoothの利用を許可してください。"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        // 何もしない
+    }]];
+    
     // アラートの表示
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"確認"
-                                                    message:@"Bluetoothの設定をONにしてください。"
-                                                   delegate:self
-                                          cancelButtonTitle:nil
-                                          otherButtonTitles:@"OK", nil];
-    [alert show];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma mark - other method

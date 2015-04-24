@@ -23,6 +23,11 @@
  */
 - (void)measureBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region;
 
+/**
+ Bluetoothの機能を使えない場合に呼び出される処理
+ */
+- (void)didFailToUseBluetooth;
+
 @end
 
 @interface iBeaconCentral : NSObject
@@ -43,5 +48,16 @@
 
 /// デリゲート先で参照するためのプロパティ
 @property (nonatomic, assign) id<iBeaconCentralDelegate> delegate;
+
+#pragma mark - other method
+/**
+ レンジング開始処理
+ */
+- (void)startRangingBeacons;
+
+/**
+ レンジング終了処理
+ */
+- (void)stopRangingBeacons;
 
 @end
