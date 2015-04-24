@@ -49,11 +49,11 @@ static NSInteger const defaultMinor = 0;
     
     if(uuid.length > 0 && major.length > 0 && minor.length > 0) {
         // 各パラメータがテキストフィールドに入力されている場合
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"確認"
-                                                                                 message:@"パラメータを保存しますか？"
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                                                 message:NSLocalizedString(@"confirmSaveParameterMsg", nil)
                                                                           preferredStyle:UIAlertControllerStyleAlert];
         
-        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             // 端末内部に各パラメータを保存
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults setObject:uuid forKey:@"uuid"];
@@ -62,11 +62,11 @@ static NSInteger const defaultMinor = 0;
             [defaults synchronize];
             
             // 結果用アラートの生成
-            UIAlertController *resultAlertController = [UIAlertController alertControllerWithTitle:@"確認"
-                                                                                           message:@"パラメータを保存しました。"
+            UIAlertController *resultAlertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                                                           message:NSLocalizedString(@"resultSaveParameterMsg", nil)
                                                                                     preferredStyle:UIAlertControllerStyleAlert];
             
-            [resultAlertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [resultAlertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                 // 何もしない
             }]];
             
@@ -74,7 +74,7 @@ static NSInteger const defaultMinor = 0;
             [self presentViewController:resultAlertController animated:YES completion:nil];
         }]];
         
-        [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"cancelBtn", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
             // 何もしない
         }]];
         
@@ -82,11 +82,11 @@ static NSInteger const defaultMinor = 0;
         [self presentViewController:alertController animated:YES completion:nil];
     } else {
         // 各パラメータがテキストフィールドに入力されていない場合
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"確認"
-                                                                                 message:@"正しい値を入力してください。"
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                                                 message:NSLocalizedString(@"missedInput", nil)
                                                                           preferredStyle:UIAlertControllerStyleAlert];
         
-        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             // 何もしない
         }]];
         

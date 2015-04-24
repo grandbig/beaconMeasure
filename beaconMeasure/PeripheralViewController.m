@@ -59,11 +59,11 @@
 // Bluetoothの機能を使えない場合に呼び出される処理
 - (void)didFailToUseBluetooth
 {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"確認"
-                                                                             message:@"コントロールセンターからBluetoothの利用を許可してください。"
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                                             message:NSLocalizedString(@"allowBluetoothMsg", nil)
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     
-    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         // 何もしない
     }]];
     
@@ -80,7 +80,7 @@
 {
     _bmFontView.text = @"ADVERTISING";
     [_peripheral startAdvertising];
-    [_advBtn setTitle:@"STOP" forState:UIControlStateNormal];
+    [_advBtn setTitle:NSLocalizedString(@"stopBtn", nil) forState:UIControlStateNormal];
     _flag = YES;
 }
 
@@ -91,7 +91,7 @@
 {
     _bmFontView.text = @" SLEEPING  ";
     [_peripheral stopAdvertising];
-    [_advBtn setTitle:@"START" forState:UIControlStateNormal];
+    [_advBtn setTitle:NSLocalizedString(@"startBtn", nil) forState:UIControlStateNormal];
     _flag = NO;
 }
 

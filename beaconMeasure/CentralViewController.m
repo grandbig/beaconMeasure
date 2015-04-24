@@ -91,15 +91,15 @@
 // 位置情報サービスの機能を利用できない場合に呼び出される処理
 - (void)didFailToUseLocationService
 {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"確認"
-                                                                             message:@"設定画面で位置情報サービスの利用を許可してください。"
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                                             message:NSLocalizedString(@"allowLocationServiceMsg", nil)
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     
-    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         // 何もしない
     }]];
     
-    [alertController addAction:[UIAlertAction actionWithTitle:@"設定" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"settingBtn", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
         // 設定画面へのURLスキーム
         NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
         [[UIApplication sharedApplication] openURL:url];
@@ -112,11 +112,11 @@
 // Bluetoothの機能を使えない場合に呼び出される処理
 - (void)didFailToUseBluetooth
 {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"確認"
-                                                                             message:@"コントロールセンターからBluetoothの利用を許可してください。"
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                                             message:NSLocalizedString(@"allowBluetoothMsg", nil)
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     
-    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         // 何もしない
     }]];
     

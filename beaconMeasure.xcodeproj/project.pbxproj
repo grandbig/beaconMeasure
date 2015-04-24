@@ -18,6 +18,7 @@
 		6E53CE771AE25E83005567C7 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E53CE761AE25E83005567C7 /* back.png */; };
 		6EA2D9DC1AEA053100E535A4 /* update.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EA2D9DB1AEA053100E535A4 /* update.png */; };
 		6EA2D9DE1AEA1AE800E535A4 /* antenna.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6EA2D9DD1AEA1AE800E535A4 /* antenna.gif */; };
+		6EA2D9EB1AEA3B4200E535A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6EA2D9ED1AEA3B4200E535A4 /* Localizable.strings */; };
 		6EA57C721ADA877900D31AC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA57C711ADA877900D31AC7 /* main.m */; };
 		6EA57C751ADA877900D31AC7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA57C741ADA877900D31AC7 /* AppDelegate.m */; };
 		6EA57C781ADA877900D31AC7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA57C771ADA877900D31AC7 /* ViewController.m */; };
@@ -66,8 +67,17 @@
 		6E53CE761AE25E83005567C7 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		6EA2D9DB1AEA053100E535A4 /* update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = update.png; sourceTree = "<group>"; };
 		6EA2D9DD1AEA1AE800E535A4 /* antenna.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = antenna.gif; sourceTree = "<group>"; };
+		6EA2D9DF1AEA36AA00E535A4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		6EA2D9E01AEA36AA00E535A4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6EA2D9E21AEA36DE00E535A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		6EA2D9E41AEA376E00E535A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6EA2D9E51AEA37C200E535A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
+		6EA2D9E71AEA37C400E535A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
+		6EA2D9E81AEA37C500E535A4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ja; path = ja.lproj/Info.plist; sourceTree = "<group>"; };
+		6EA2D9EC1AEA3B4200E535A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6EA2D9EE1AEA3B4400E535A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6EA2D9EF1AEA3B4500E535A4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6EA57C6C1ADA877800D31AC7 /* beaconMeasure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = beaconMeasure.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EA57C701ADA877900D31AC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EA57C711ADA877900D31AC7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6EA57C731ADA877900D31AC7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6EA57C741ADA877900D31AC7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -185,8 +195,9 @@
 			isa = PBXGroup;
 			children = (
 				6EA57CA31ADAB58100D31AC7 /* Resources */,
-				6EA57C701ADA877900D31AC7 /* Info.plist */,
+				6EA2D9E61AEA37C200E535A4 /* Info.plist */,
 				6EA57C711ADA877900D31AC7 /* main.m */,
+				6EA2D9ED1AEA3B4200E535A4 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -328,6 +339,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 6EA57C631ADA877800D31AC7;
 			productRefGroup = 6EA57C6D1ADA877800D31AC7 /* Products */;
@@ -354,6 +366,7 @@
 				6E12D0681AE3FB76000EE4E4 /* multiBeacon.png in Resources */,
 				6EA57C801ADA877900D31AC7 /* LaunchScreen.xib in Resources */,
 				6E53CE771AE25E83005567C7 /* back.png in Resources */,
+				6EA2D9EB1AEA3B4200E535A4 /* Localizable.strings in Resources */,
 				6EA57C7D1ADA877900D31AC7 /* Images.xcassets in Resources */,
 				6EA57CEC1ADABDCF00D31AC7 /* home.png in Resources */,
 				6EA57CF21ADAC26900D31AC7 /* settings.png in Resources */,
@@ -441,10 +454,32 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6EA2D9E61AEA37C200E535A4 /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EA2D9E51AEA37C200E535A4 /* Base */,
+				6EA2D9E71AEA37C400E535A4 /* en */,
+				6EA2D9E81AEA37C500E535A4 /* ja */,
+			);
+			name = Info.plist;
+			sourceTree = "<group>";
+		};
+		6EA2D9ED1AEA3B4200E535A4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EA2D9EC1AEA3B4200E535A4 /* Base */,
+				6EA2D9EE1AEA3B4400E535A4 /* en */,
+				6EA2D9EF1AEA3B4500E535A4 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		6EA57C791ADA877900D31AC7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6EA57C7A1ADA877900D31AC7 /* Base */,
+				6EA2D9DF1AEA36AA00E535A4 /* ja */,
+				6EA2D9E21AEA36DE00E535A4 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -453,6 +488,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6EA57C7F1ADA877900D31AC7 /* Base */,
+				6EA2D9E01AEA36AA00E535A4 /* ja */,
+				6EA2D9E41AEA376E00E535A4 /* en */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -551,7 +588,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Takahiro Kato (2NYFNN4N85)";
-				INFOPLIST_FILE = beaconMeasure/Info.plist;
+				INFOPLIST_FILE = beaconMeasure/Base.lproj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -566,7 +603,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Takahiro Kato (2NYFNN4N85)";
-				INFOPLIST_FILE = beaconMeasure/Info.plist;
+				INFOPLIST_FILE = beaconMeasure/Base.lproj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

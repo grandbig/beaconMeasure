@@ -1,0 +1,48 @@
+
+/* Class = "UILabel"; text = "Search"; ObjectID = "1bh-dF-172"; */
+"1bh-dF-172.text" = "検索";
+
+/* Class = "UILabel"; text = "Advertise"; ObjectID = "F22-Vw-66T"; */
+"F22-Vw-66T.text" = "発信";
+
+/* Class = "UILabel"; text = "UUID"; ObjectID = "Fbc-o3-4AH"; */
+"Fbc-o3-4AH.text" = "UUID";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "Nzt-hx-PhR"; */
+"Nzt-hx-PhR.text" = "情報";
+
+/* Class = "UITextView"; text = "******************\nFBDigitalFont\n******************\n\nThe MIT License\n\nCopyright (c) 2013 lyo.kato@gmail.com\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n\n******************\nTumblrMenu\n******************\n\nThe MIT License (MIT)\n\nCopyright (c) 2013 Hang Chen\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."; ObjectID = "PC5-k8-Jvr"; */
+"PC5-k8-Jvr.text" = "******************\nFBDigitalFont\n******************\n\nThe MIT License\n\nCopyright (c) 2013 lyo.kato@gmail.com\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n\n******************\nTumblrMenu\n******************\n\nThe MIT License (MIT)\n\nCopyright (c) 2013 Hang Chen\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.";
+
+/* Class = "UILabel"; text = "Measure"; ObjectID = "S89-xn-iqs"; */
+"S89-xn-iqs.text" = "距離計測";
+
+/* Class = "UILabel"; text = "major"; ObjectID = "Sxi-PR-t0F"; */
+"Sxi-PR-t0F.text" = "major";
+
+/* Class = "UILabel"; text = "minor"; ObjectID = "U9o-xO-rD9"; */
+"U9o-xO-rD9.text" = "minor";
+
+/* Class = "UILabel"; text = "Setting"; ObjectID = "W7n-vC-Hne"; */
+"W7n-vC-Hne.text" = "設定";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "WqJ-Kg-1Fl"; */
+"WqJ-Kg-1Fl.normalTitle" = "保存";
+
+/* Class = "UITextField"; placeholder = "0"; ObjectID = "dKk-sa-T8A"; */
+"dKk-sa-T8A.placeholder" = "0";
+
+/* Class = "UITextField"; placeholder = "0"; ObjectID = "dUU-Vf-7FG"; */
+"dUU-Vf-7FG.placeholder" = "0";
+
+/* Class = "UIButton"; normalTitle = "START"; ObjectID = "g9I-UI-G9U"; */
+"g9I-UI-G9U.normalTitle" = "開始";
+
+/* Class = "UILabel"; text = "Licence"; ObjectID = "iIJ-24-Qhx"; */
+"iIJ-24-Qhx.text" = "ライセンス";
+
+/* Class = "UITextField"; placeholder = "33B7DD31-897F-4357-B41E-0F1CE208DBCB"; ObjectID = "uxn-3w-ncp"; */
+"uxn-3w-ncp.placeholder" = "33B7DD31-897F-4357-B41E-0F1CE208DBCB";
+
+/* Class = "UILabel"; text = "."; ObjectID = "vqs-zs-vgw"; */
+"vqs-zs-vgw.text" = ".";
