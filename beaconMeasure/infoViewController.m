@@ -32,7 +32,7 @@
 #pragma mark - tableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return [_titleArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -54,9 +54,9 @@
 {
     switch ([indexPath row]) {
         case 0:
+            [self performSegueWithIdentifier:@"LicenceSegue" sender:self];
             break;
         case 1:
-            [self performSegueWithIdentifier:@"LicenceSegue" sender:self];
             break;
         default:
             break;

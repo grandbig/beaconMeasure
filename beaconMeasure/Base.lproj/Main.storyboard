@@ -204,6 +204,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</stri
                                         <rect key="frame" x="88" y="6" width="472" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                        <connections>
+                                            <action selector="exitInputUUID:" destination="5rG-8L-ERh" eventType="editingDidEndOnExit" id="mAX-r3-Uwu"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="major" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxi-PR-t0F">
                                         <rect key="frame" x="8" y="49" width="72" height="41"/>
@@ -220,11 +223,17 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</stri
                                         <rect key="frame" x="88" y="55" width="472" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                        <connections>
+                                            <action selector="exitInputMajor:" destination="5rG-8L-ERh" eventType="editingDidEndOnExit" id="QHG-6A-kAv"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dUU-Vf-7FG">
                                         <rect key="frame" x="88" y="104" width="472" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                        <connections>
+                                            <action selector="exitInputMinor:" destination="5rG-8L-ERh" eventType="editingDidEndOnExit" id="Elr-lE-bKO"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="minor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9o-xO-rD9">
                                         <rect key="frame" x="8" y="98" width="72" height="41"/>
@@ -286,6 +295,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</stri
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="R4l-YO-LEN" firstAttribute="trailing" secondItem="myv-NE-1j8" secondAttribute="trailingMargin" id="1cu-RV-25u"/>
                             <constraint firstItem="R4l-YO-LEN" firstAttribute="leading" secondItem="myv-NE-1j8" secondAttribute="leadingMargin" id="5rW-FA-9m6"/>
@@ -297,6 +307,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</stri
                             <constraint firstAttribute="centerY" secondItem="R4l-YO-LEN" secondAttribute="centerY" id="ngS-o6-zG3"/>
                             <constraint firstItem="W7n-vC-Hne" firstAttribute="leading" secondItem="dG7-I4-iNI" secondAttribute="trailing" constant="8" id="wWg-Pd-GgY"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qxI-SE-1Vv" appends="YES" id="R2K-aL-kCX"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="majorTextField" destination="dKk-sa-T8A" id="Ja6-Wb-hf3"/>
@@ -305,6 +318,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</stri
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FOL-Lc-mjH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="qxI-SE-1Vv">
+                    <connections>
+                        <action selector="onSingleTap:" destination="5rG-8L-ERh" id="eDN-HN-N4g"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1458" y="914"/>
         </scene>

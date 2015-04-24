@@ -49,15 +49,49 @@ static NSInteger const defaultMinor = 0;
     
     if(uuid.length > 0 && major.length > 0 && minor.length > 0) {
         // 各パラメータがテキストフィールドに入力されている場合
-        // 端末内部に各パラメータを保存
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:uuid forKey:@"uuid"];
-        [defaults setObject:major forKey:@"major"];
-        [defaults setObject:minor forKey:@"minor"];
-        [defaults synchronize];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"確認"
+                                                                                 message:@"パラメータを保存しますか？"
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            // 端末内部に各パラメータを保存
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:uuid forKey:@"uuid"];
+            [defaults setObject:major forKey:@"major"];
+            [defaults setObject:minor forKey:@"minor"];
+            [defaults synchronize];
+            
+            // 結果用アラートの生成
+            UIAlertController *resultAlertController = [UIAlertController alertControllerWithTitle:@"確認"
+                                                                                           message:@"パラメータを保存しました。"
+                                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            [resultAlertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                // 何もしない
+            }]];
+            
+            // アラートの表示
+            [self presentViewController:resultAlertController animated:YES completion:nil];
+        }]];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            // 何もしない
+        }]];
+        
+        // アラートの表示
+        [self presentViewController:alertController animated:YES completion:nil];
     } else {
         // 各パラメータがテキストフィールドに入力されていない場合
-        // TODO:アラートを表示
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"確認"
+                                                                                 message:@"正しい値を入力してください。"
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            // 何もしない
+        }]];
+        
+        // アラートの表示
+        [self presentViewController:alertController animated:YES completion:nil];
     }
 }
 
@@ -68,6 +102,38 @@ static NSInteger const defaultMinor = 0;
 - (IBAction)backToViewController:(id)sender {
     // 画面を閉じる
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+/**
+ UUIDのテキストフィールド入力時にEnterをタップしたときのアクション
+ @param sender アクション
+ */
+- (IBAction)exitInputUUID:(id)sender {
+    // キーボードを閉じる処理
+    [sender resignFirstResponder];
+}
+
+/**
+ majorのテキストフィールド入力時にEnterをタップしたときのアクション
+ @param sender アクション
+ */
+- (IBAction)exitInputMajor:(id)sender {
+    // キーボードを閉じる処理
+    [sender resignFirstResponder];
+}
+
+/**
+ minorのテキストフィールド入力時にEnterをタップしたときのアクション
+ @param sender アクション
+ */
+- (IBAction)exitInputMinor:(id)sender {
+    // キーボードを閉じる処理
+    [sender resignFirstResponder];
+}
+
+- (IBAction)onSingleTap:(UITapGestureRecognizer *)sender {
+    // キーボードを閉じる処理
+    [self.view endEditing:YES];
 }
 
 #pragma mark - other method
