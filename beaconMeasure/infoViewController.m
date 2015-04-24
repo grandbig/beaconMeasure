@@ -26,7 +26,7 @@
     
     _infoTableView.delegate = self;
     _infoTableView.dataSource = self;
-    _titleArray = @[@"Licence"];
+    _titleArray = @[NSLocalizedString(@"licence", nil)];
 }
 
 #pragma mark - tableViewDelegate

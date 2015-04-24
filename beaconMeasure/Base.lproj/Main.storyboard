@@ -283,7 +283,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</stri
                                     <constraint firstItem="Fbc-o3-4AH" firstAttribute="leading" secondItem="R4l-YO-LEN" secondAttribute="leading" id="yU3-QA-0Ld"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7n-vC-Hne">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7n-vC-Hne">
                                 <rect key="frame" x="72" y="20" width="464" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="DTh-Oj-JKR"/>

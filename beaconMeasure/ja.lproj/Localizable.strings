@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  beaconMeasure
+
+  Created by 加藤 雄大 on 2015/04/24.
+  Copyright (c) 2015年 grandbig.github.io. All rights reserved.
+*/
+
+// アラート
+"alertTitle"="確認";
+"allowLocationServiceMsg"="設定画面から位置情報サービスの利用を許可してください。";
+"allowBluetoothMsg"="コントロールセンターからBluetoothの利用を許可してください。";
+"confirmSaveParameterMsg"="パラメータを保存しますか？";
+"resultSaveParameterMsg"="パラメータを保存しました。";
+"missedInput"="正しい値を入力してください。";
+"okBtn"="OK";
+"cancelBtn"="キャンセル";
+"settingBtn"="設定";
+
+// Peripheral画面
+"startBtn"="開始";
+"stopBtn"="停止";
+
+// メイン画面
+"advertise"="発信";
+"measure"="距離計測";
+"search"="検索";
+"settings"="設定";
+"about"="情報";
+
+// 情報画面
+"licence"="ライセンス";
