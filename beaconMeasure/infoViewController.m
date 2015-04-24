@@ -26,7 +26,7 @@
     
     _infoTableView.delegate = self;
     _infoTableView.dataSource = self;
-    _titleArray = @[NSLocalizedString(@"licence", nil)];
+    _titleArray = @[NSLocalizedString(@"licence", nil), NSLocalizedString(@"developerSite", nil)];
 }
 
 #pragma mark - tableViewDelegate
@@ -57,6 +57,13 @@
             [self performSegueWithIdentifier:@"LicenceSegue" sender:self];
             break;
         case 1:
+        {
+            NSString *urlString = @"http://grandbig.github.io/";
+            NSURL *url = [NSURL URLWithString:urlString];
+            
+            // ブラウザを起動する
+            [[UIApplication sharedApplication] openURL:url];
+        }
             break;
         default:
             break;
