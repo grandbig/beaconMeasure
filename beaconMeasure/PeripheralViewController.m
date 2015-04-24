@@ -59,16 +59,27 @@
 // Bluetoothの機能を使えない場合に呼び出される処理
 - (void)didFailToUseBluetooth
 {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
-                                                                             message:NSLocalizedString(@"allowBluetoothMsg", nil)
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-    
-    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        // 何もしない
-    }]];
-    
-    // アラートの表示
-    [self presentViewController:alertController animated:YES completion:nil];
+    if([UIAlertController class]) {
+        // iOS8以上の場合
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                                                 message:NSLocalizedString(@"allowBluetoothMsg", nil)
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            // 何もしない
+        }]];
+        
+        // アラートの表示
+        [self presentViewController:alertController animated:YES completion:nil];
+    } else {
+        // iOS7以下の場合
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                        message:NSLocalizedString(@"allowBluetoothMsg", nil)
+                                                       delegate:nil
+                                              cancelButtonTitle:NSLocalizedString(@"okBtn", nil)
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 #pragma mark - other method

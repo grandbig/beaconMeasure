@@ -91,37 +91,60 @@
 // 位置情報サービスの機能を利用できない場合に呼び出される処理
 - (void)didFailToUseLocationService
 {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
-                                                                             message:NSLocalizedString(@"allowLocationServiceMsg", nil)
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-    
-    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        // 何もしない
-    }]];
-    
-    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"settingBtn", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        // 設定画面へのURLスキーム
-        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-        [[UIApplication sharedApplication] openURL:url];
-    }]];
-    
-    // アラートの表示
-    [self presentViewController:alertController animated:YES completion:nil];
+    if([UIAlertController class]) {
+        // iOS8以上の場合
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                                                 message:NSLocalizedString(@"allowLocationServiceMsg", nil)
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            // 何もしない
+        }]];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"settingBtn", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            // 設定画面へのURLスキーム
+            NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+            [[UIApplication sharedApplication] openURL:url];
+        }]];
+        
+        // アラートの表示
+        [self presentViewController:alertController animated:YES completion:nil];
+    } else {
+        // iOS7以下の場合
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                        message:NSLocalizedString(@"allowLocationServiceMsg", nil)
+                                                       delegate:nil
+                                              cancelButtonTitle:NSLocalizedString(@"okBtn", nil)
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 // Bluetoothの機能を使えない場合に呼び出される処理
 - (void)didFailToUseBluetooth
 {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
-                                                                             message:NSLocalizedString(@"allowBluetoothMsg", nil)
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    if([UIAlertController class]) {
+        // iOS8以上の場合
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                                                 message:NSLocalizedString(@"allowBluetoothMsg", nil)
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            // 何もしない
+        }]];
+        
+        // アラートの表示
+        [self presentViewController:alertController animated:YES completion:nil];
+    } else {
+        // iOS7以下の場合
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                        message:NSLocalizedString(@"allowBluetoothMsg", nil)
+                                                       delegate:nil
+                                              cancelButtonTitle:NSLocalizedString(@"okBtn", nil)
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
     
-    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        // 何もしない
-    }]];
-    
-    // アラートの表示
-    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma mark - action

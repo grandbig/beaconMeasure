@@ -15,7 +15,7 @@ static NSInteger const defaultMajor = 0;
 // デフォルトのminor
 static NSInteger const defaultMinor = 0;
 
-@interface SettingViewController()
+@interface SettingViewController()<UIAlertViewDelegate>
 
 /// UUIDを入力するテキストフィールド
 @property (weak, nonatomic) IBOutlet UITextField *uuidTextField;
@@ -36,6 +36,42 @@ static NSInteger const defaultMinor = 0;
     [self setInputTextField];
 }
 
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+        {
+            if(alertView.tag == 0) {
+                // 確認用アラートの場合
+                // テキストフィールドに入力された値を取得
+                NSString *uuid = self.uuidTextField.text;
+                NSString *major = self.majorTextField.text;
+                NSString *minor = self.minorTextField.text;
+                
+                // 端末内部に各パラメータを保存
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                [defaults setObject:uuid forKey:@"uuid"];
+                [defaults setObject:major forKey:@"major"];
+                [defaults setObject:minor forKey:@"minor"];
+                [defaults synchronize];
+                
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                                message:NSLocalizedString(@"resultSaveParameterMsg", nil)
+                                                               delegate:self
+                                                      cancelButtonTitle:NSLocalizedString(@"okBtn", nil)
+                                                      otherButtonTitles:nil];
+                [alert show];
+            }
+        }
+            break;
+        case 1:
+            break;
+        default:
+            break;
+    }
+}
+
 #pragma mark - action
 /**
  Saveボタンをタップしたときのアクション
@@ -48,50 +84,74 @@ static NSInteger const defaultMinor = 0;
     NSString *minor = self.minorTextField.text;
     
     if(uuid.length > 0 && major.length > 0 && minor.length > 0) {
-        // 各パラメータがテキストフィールドに入力されている場合
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
-                                                                                 message:NSLocalizedString(@"confirmSaveParameterMsg", nil)
-                                                                          preferredStyle:UIAlertControllerStyleAlert];
-        
-        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            // 端末内部に各パラメータを保存
-            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            [defaults setObject:uuid forKey:@"uuid"];
-            [defaults setObject:major forKey:@"major"];
-            [defaults setObject:minor forKey:@"minor"];
-            [defaults synchronize];
+        if([UIAlertController class]) {
+            // iOS8以上の場合
+            // 各パラメータがテキストフィールドに入力されている場合
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                                                     message:NSLocalizedString(@"confirmSaveParameterMsg", nil)
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
             
-            // 結果用アラートの生成
-            UIAlertController *resultAlertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
-                                                                                           message:NSLocalizedString(@"resultSaveParameterMsg", nil)
-                                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                // 端末内部に各パラメータを保存
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                [defaults setObject:uuid forKey:@"uuid"];
+                [defaults setObject:major forKey:@"major"];
+                [defaults setObject:minor forKey:@"minor"];
+                [defaults synchronize];
+                
+                // 結果用アラートの生成
+                UIAlertController *resultAlertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                                                               message:NSLocalizedString(@"resultSaveParameterMsg", nil)
+                                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                
+                [resultAlertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                    // 何もしない
+                }]];
+                
+                // アラートの表示
+                [self presentViewController:resultAlertController animated:YES completion:nil];
+            }]];
             
-            [resultAlertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"cancelBtn", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
                 // 何もしない
             }]];
             
             // アラートの表示
-            [self presentViewController:resultAlertController animated:YES completion:nil];
-        }]];
+            [self presentViewController:alertController animated:YES completion:nil];
+        } else {
+            // iOS7以下の場合
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                            message:NSLocalizedString(@"confirmSaveParameterMsg", nil)
+                                                           delegate:self
+                                                  cancelButtonTitle:NSLocalizedString(@"okBtn", nil)
+                                                  otherButtonTitles:nil];
+            alert.tag = 0;
+            [alert show];
+        }
         
-        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"cancelBtn", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-            // 何もしない
-        }]];
-        
-        // アラートの表示
-        [self presentViewController:alertController animated:YES completion:nil];
     } else {
-        // 各パラメータがテキストフィールドに入力されていない場合
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
-                                                                                 message:NSLocalizedString(@"missedInput", nil)
-                                                                          preferredStyle:UIAlertControllerStyleAlert];
-        
-        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            // 何もしない
-        }]];
-        
-        // アラートの表示
-        [self presentViewController:alertController animated:YES completion:nil];
+        if([UIAlertController class]) {
+            // iOS8以上の場合
+            // 各パラメータがテキストフィールドに入力されていない場合
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                                                     message:NSLocalizedString(@"missedInput", nil)
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"okBtn", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                // 何もしない
+            }]];
+            
+            // アラートの表示
+            [self presentViewController:alertController animated:YES completion:nil];
+        } else {
+            // iOS7以下の場合
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"alertTitle", nil)
+                                                            message:NSLocalizedString(@"missedInput", nil)
+                                                           delegate:self
+                                                  cancelButtonTitle:NSLocalizedString(@"okBtn", nil)
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
     }
 }
 
