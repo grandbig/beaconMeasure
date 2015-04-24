@@ -49,4 +49,10 @@
  */
 - (void)stopAdvertising;
 
+/**
+ iBeacon信号の発信状態を返却する処理
+ @return iBeacon信号の発信状態(YES: 発信状態, NO: 停止状態)
+ */
+- (BOOL)isAdvertising;
+
 @end

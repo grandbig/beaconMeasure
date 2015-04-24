@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E121DC51AEA7D06006A5BFB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E121DC41AEA7D06006A5BFB /* QuartzCore.framework */; };
 		6E12D0681AE3FB76000EE4E4 /* multiBeacon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E12D0671AE3FB76000EE4E4 /* multiBeacon.png */; };
 		6E2C9F0D1AE3FD8700F04543 /* infoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C9F0C1AE3FD8700F04543 /* infoViewController.m */; };
 		6E2C9F0F1AE3FFAB00F04543 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E2C9F0E1AE3FFAB00F04543 /* info.png */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		56DFFAE81CC9FF5A5F91D3FD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		6E121DC41AEA7D06006A5BFB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6E12D0671AE3FB76000EE4E4 /* multiBeacon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = multiBeacon.png; sourceTree = "<group>"; };
 		6E2C9F0B1AE3FD8700F04543 /* infoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = infoViewController.h; sourceTree = "<group>"; };
 		6E2C9F0C1AE3FD8700F04543 /* infoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = infoViewController.m; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E121DC51AEA7D06006A5BFB /* QuartzCore.framework in Frameworks */,
 				6EA57C9F1ADAA80C00D31AC7 /* CoreBluetooth.framework in Frameworks */,
 				6EA57C9A1ADAA20000D31AC7 /* CoreLocation.framework in Frameworks */,
 				CBA6F44C333074C77DC037A0 /* libPods.a in Frameworks */,
@@ -129,6 +132,7 @@
 		318FCE2CC6D907CCFD1FA182 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E121DC41AEA7D06006A5BFB /* QuartzCore.framework */,
 				F3D68E1470447B9583EB9F7E /* libPods.a */,
 			);
 			name = Frameworks;
