@@ -39,7 +39,11 @@
         _central.delegate = self;
     }
     
-    _bmFontView.text = @"0";
+    CGFloat defaultDistance = 0.000000;
+    NSString *distanceString = [self getDistanceString:defaultDistance];
+    NSArray *numberArray = [distanceString componentsSeparatedByString:@"."];
+    
+    _bmFontView.text = [numberArray objectAtIndex:0];
     _bmFontView.numberOfBottomPaddingDot = 1;
     _bmFontView.numberOfTopPaddingDot    = 1;
     _bmFontView.numberOfLeftPaddingDot   = 2;
@@ -48,7 +52,7 @@
     _bmFontView.innerGlowSize = 3.0;
     _bmFontView.edgeLength = 3.0;
     
-    _bmFontView2.text = @"0000000m";
+    _bmFontView2.text = [[NSString alloc] initWithFormat:@"%@m", [numberArray objectAtIndex:1]];
     _bmFontView2.numberOfBottomPaddingDot = 1;
     _bmFontView2.numberOfTopPaddingDot    = 1;
     _bmFontView2.numberOfLeftPaddingDot   = 2;
@@ -67,7 +71,7 @@
         CLBeacon *beacon = beacons.firstObject;
         // 距離を取得
         CGFloat distance = beacon.accuracy;
-        NSString *distanceString = [[NSString alloc] initWithFormat:@"%.7f", distance];
+        NSString *distanceString = [self getDistanceString:distance];
         NSArray *numberArray = [distanceString componentsSeparatedByString:@"."];
         NSString *integerString, *decimalString;
         if([numberArray count] == 2) {
@@ -82,8 +86,11 @@
             _bmFontView2.text = decimalString;
         } else {
             // その他
-            _bmFontView.text = @"0";
-            _bmFontView2.text = @"0000000m";
+            CGFloat defaultDistance = 0.000000;
+            NSString *distanceString = [self getDistanceString:defaultDistance];
+            NSArray *numberArray = [distanceString componentsSeparatedByString:@"."];
+            _bmFontView.text = [numberArray objectAtIndex:0];
+            _bmFontView2.text = [[NSString alloc] initWithFormat:@"%@m", [numberArray objectAtIndex:1]];
         }
     }
 }
@@ -155,6 +162,29 @@
 - (IBAction)backToViewController:(id)sender {
     // 画面を閉じる
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - other method
+/**
+ 距離の文字列を取得する処理
+ @param distance 距離
+ @return 距離の文字列
+ */
+- (NSString *)getDistanceString:(CGFloat)distance
+{
+    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+    NSString *distanceString;
+    
+    if(width == 320) {
+        // 3.5inchの場合
+        distanceString = [[NSString alloc] initWithFormat:@"%.5f", distance];
+    } else if(width == 414) {
+        distanceString = [[NSString alloc] initWithFormat:@"%.8f", distance];
+    } else {
+        distanceString = [[NSString alloc] initWithFormat:@"%.7f", distance];
+    }
+    
+    return distanceString;
 }
 
 @end

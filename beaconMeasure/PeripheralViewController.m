@@ -45,7 +45,7 @@
     }
     
     _flag = NO;
-    _bmFontView.text = @" SLEEPING  ";
+    _bmFontView.text = [self getSleepingString];
     _bmFontView.numberOfBottomPaddingDot = 1;
     _bmFontView.numberOfTopPaddingDot    = 1;
     _bmFontView.numberOfLeftPaddingDot   = 2;
@@ -90,7 +90,7 @@
  */
 - (void)changeAdvertiseMode
 {
-    _bmFontView.text = @"ADVERTISING";
+    _bmFontView.text = [self getAdvertiseString];
     [_peripheral startAdvertising];
     [_advBtn setTitle:NSLocalizedString(@"stopBtn", nil) forState:UIControlStateNormal];
     _flag = YES;
@@ -102,7 +102,7 @@
  */
 - (void)changeSleepMode
 {
-    _bmFontView.text = @" SLEEPING  ";
+    _bmFontView.text = [self getSleepingString];
     [_peripheral stopAdvertising];
     [_advBtn setTitle:NSLocalizedString(@"startBtn", nil) forState:UIControlStateNormal];
     _flag = NO;
@@ -129,6 +129,48 @@
  */
 - (void)noBlinkImage:(UIView *)target {
     [target.layer removeAnimationForKey:@"blink"];
+}
+
+/**
+ iBeacon信号の発信停止中に表示する文字列を返却する処理
+ @return iBeacon信号の発信停止中に表示する文字列
+ */
+- (NSString *)getSleepingString
+{
+    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+    NSString *sleepingString;
+    
+    if(width == 320) {
+        // 3.5inchの場合
+        sleepingString = @"SLEEPING ";
+    } else if(width == 414) {
+        sleepingString = @"  SLEEPING  ";
+    } else {
+        sleepingString = @" SLEEPING  ";
+    }
+    
+    return sleepingString;
+}
+
+/**
+ iBeacon信号の発信中に表示する文字列を返却する処理
+ @return iBeacon信号の発信中に表示する文字列
+ */
+- (NSString *)getAdvertiseString
+{
+    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+    NSString *advertiseString;
+    
+    if(width == 320) {
+        // 3.5inchの場合
+        advertiseString = @"ADVERTISE";
+    } else if(width == 414) {
+        advertiseString = @"ADVERTISING ";
+    } else {
+        advertiseString = @"ADVERTISING";
+    }
+    
+    return advertiseString;
 }
 
 #pragma mark - action
