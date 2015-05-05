@@ -19,10 +19,6 @@ static NSInteger const defaultMinor = 0;
 
 /// UUIDを入力するテキストフィールド
 @property (weak, nonatomic) IBOutlet UITextField *uuidTextField;
-/// major値を入力するテキストフィールド
-@property (weak, nonatomic) IBOutlet UITextField *majorTextField;
-/// minor値を入力するテキストフィールド
-@property (weak, nonatomic) IBOutlet UITextField *minorTextField;
 
 @end
 
@@ -46,14 +42,10 @@ static NSInteger const defaultMinor = 0;
                 // 確認用アラートの場合
                 // テキストフィールドに入力された値を取得
                 NSString *uuid = self.uuidTextField.text;
-                NSString *major = self.majorTextField.text;
-                NSString *minor = self.minorTextField.text;
                 
                 // 端末内部に各パラメータを保存
                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                 [defaults setObject:uuid forKey:@"uuid"];
-                [defaults setObject:major forKey:@"major"];
-                [defaults setObject:minor forKey:@"minor"];
                 [defaults synchronize];
                 
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"alertTitle", nil)
@@ -80,10 +72,8 @@ static NSInteger const defaultMinor = 0;
 - (IBAction)saveParameters:(id)sender {
     // テキストフィールドに入力された値を取得
     NSString *uuid = self.uuidTextField.text;
-    NSString *major = self.majorTextField.text;
-    NSString *minor = self.minorTextField.text;
     
-    if(uuid.length > 0 && major.length > 0 && minor.length > 0) {
+    if(uuid.length > 0) {
         if([UIAlertController class]) {
             // iOS8以上の場合
             // 各パラメータがテキストフィールドに入力されている場合
@@ -95,8 +85,6 @@ static NSInteger const defaultMinor = 0;
                 // 端末内部に各パラメータを保存
                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                 [defaults setObject:uuid forKey:@"uuid"];
-                [defaults setObject:major forKey:@"major"];
-                [defaults setObject:minor forKey:@"minor"];
                 [defaults synchronize];
                 
                 // 結果用アラートの生成
@@ -204,28 +192,12 @@ static NSInteger const defaultMinor = 0;
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *uuid = [defaults objectForKey:@"uuid"];
-    NSString *major = [defaults objectForKey:@"major"];
-    NSString *minor = [defaults objectForKey:@"minor"];
     
     // テキストフィールドにUUIDを入力
     if(uuid.length > 0) {
         self.uuidTextField.text = uuid;
     } else {
         self.uuidTextField.text = defaultUUID;
-    }
-    
-    // テキストフィールドにmajorを入力
-    if(major.length > 0) {
-        self.majorTextField.text = major;
-    } else {
-        self.majorTextField.text = [[NSString alloc] initWithFormat:@"%ld", (long)defaultMajor];
-    }
-    
-    // テキストフィールドにminorを入力
-    if(minor.length > 0) {
-        self.minorTextField.text = minor;
-    } else {
-        self.minorTextField.text = [[NSString alloc] initWithFormat:@"%ld", (long)defaultMinor];
     }
 }
 

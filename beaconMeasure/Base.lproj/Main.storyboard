@@ -208,43 +208,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</stri
                                             <action selector="exitInputUUID:" destination="5rG-8L-ERh" eventType="editingDidEndOnExit" id="mAX-r3-Uwu"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="major" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxi-PR-t0F">
-                                        <rect key="frame" x="8" y="49" width="72" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="72" id="ViE-vJ-M6S"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="bHB-Fr-U4Q"/>
-                                            <constraint firstAttribute="height" constant="41" id="nT9-9h-rjH"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dKk-sa-T8A">
-                                        <rect key="frame" x="88" y="55" width="472" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                        <connections>
-                                            <action selector="exitInputMajor:" destination="5rG-8L-ERh" eventType="editingDidEndOnExit" id="QHG-6A-kAv"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dUU-Vf-7FG">
-                                        <rect key="frame" x="88" y="104" width="472" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                        <connections>
-                                            <action selector="exitInputMinor:" destination="5rG-8L-ERh" eventType="editingDidEndOnExit" id="Elr-lE-bKO"/>
-                                        </connections>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="minor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9o-xO-rD9">
-                                        <rect key="frame" x="8" y="98" width="72" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="72" id="9eG-wb-Wxs"/>
-                                            <constraint firstAttribute="height" constant="41" id="O5f-yh-dJ4"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WqJ-Kg-1Fl">
                                         <rect key="frame" x="488" y="154" width="80" height="41"/>
                                         <constraints>
@@ -263,23 +226,13 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</stri
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Sxi-PR-t0F" firstAttribute="leading" secondItem="R4l-YO-LEN" secondAttribute="leading" constant="8" id="17d-fY-LZ4"/>
-                                    <constraint firstItem="WqJ-Kg-1Fl" firstAttribute="top" secondItem="dUU-Vf-7FG" secondAttribute="bottom" constant="20" id="Ej5-li-hU2"/>
                                     <constraint firstAttribute="height" constant="200" id="Sjz-ng-I1M"/>
-                                    <constraint firstAttribute="trailing" secondItem="dUU-Vf-7FG" secondAttribute="trailing" constant="8" id="XDq-wH-NbO"/>
                                     <constraint firstItem="Fbc-o3-4AH" firstAttribute="top" secondItem="R4l-YO-LEN" secondAttribute="top" id="Xzk-Os-Dgn"/>
-                                    <constraint firstItem="dUU-Vf-7FG" firstAttribute="top" secondItem="dKk-sa-T8A" secondAttribute="bottom" constant="19" id="YUV-UA-g0N"/>
-                                    <constraint firstItem="dKk-sa-T8A" firstAttribute="top" secondItem="uxn-3w-ncp" secondAttribute="bottom" constant="19" id="bcQ-2L-AQu"/>
-                                    <constraint firstItem="dKk-sa-T8A" firstAttribute="leading" secondItem="Sxi-PR-t0F" secondAttribute="trailing" constant="8" id="f0v-3f-BKf"/>
-                                    <constraint firstAttribute="trailing" secondItem="dKk-sa-T8A" secondAttribute="trailing" constant="8" id="f9x-mG-M4i"/>
                                     <constraint firstAttribute="trailing" secondItem="uxn-3w-ncp" secondAttribute="trailing" constant="8" id="gQg-Sb-pF3"/>
                                     <constraint firstItem="uxn-3w-ncp" firstAttribute="top" secondItem="R4l-YO-LEN" secondAttribute="top" constant="6" id="gjz-pk-4nZ"/>
-                                    <constraint firstItem="U9o-xO-rD9" firstAttribute="top" secondItem="Sxi-PR-t0F" secondAttribute="bottom" constant="8" id="lK5-7l-FWj"/>
-                                    <constraint firstItem="U9o-xO-rD9" firstAttribute="leading" secondItem="R4l-YO-LEN" secondAttribute="leading" constant="8" id="mNi-si-p5J"/>
                                     <constraint firstAttribute="trailing" secondItem="WqJ-Kg-1Fl" secondAttribute="trailing" id="my2-JQ-6Gd"/>
                                     <constraint firstItem="uxn-3w-ncp" firstAttribute="leading" secondItem="Fbc-o3-4AH" secondAttribute="trailing" constant="8" id="nPv-cC-DDx"/>
-                                    <constraint firstItem="Sxi-PR-t0F" firstAttribute="top" secondItem="Fbc-o3-4AH" secondAttribute="bottom" constant="8" id="sEH-nq-ghm"/>
-                                    <constraint firstItem="dUU-Vf-7FG" firstAttribute="leading" secondItem="U9o-xO-rD9" secondAttribute="trailing" constant="8" id="v8m-Zm-bSe"/>
+                                    <constraint firstAttribute="bottom" secondItem="WqJ-Kg-1Fl" secondAttribute="bottom" constant="5" id="tKg-At-JJh"/>
                                     <constraint firstItem="Fbc-o3-4AH" firstAttribute="leading" secondItem="R4l-YO-LEN" secondAttribute="leading" id="yU3-QA-0Ld"/>
                                 </constraints>
                             </view>
@@ -312,8 +265,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</stri
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="majorTextField" destination="dKk-sa-T8A" id="Ja6-Wb-hf3"/>
-                        <outlet property="minorTextField" destination="dUU-Vf-7FG" id="mZm-uy-c0y"/>
                         <outlet property="uuidTextField" destination="uxn-3w-ncp" id="FGV-om-c9n"/>
                     </connections>
                 </viewController>
