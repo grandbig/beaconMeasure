@@ -36,7 +36,7 @@
  @param minor iBeaconのminor
  @return iBeaconPeripheralオブジェクト
  */
-- (id)initWithUUID:(NSString *)uuid major:(NSInteger)major minor:(NSInteger)minor;
+- (id)initWithUUID:(NSString *)uuid major:(NSNumber *)major minor:(NSNumber *)minor;
 
 #pragma mark - other method
 /**

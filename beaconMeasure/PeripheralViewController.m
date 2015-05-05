@@ -32,11 +32,9 @@
     // 端末内部に保存したパラメータを取得
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *uuid = [defaults objectForKey:@"uuid"];
-    NSString *major = [defaults objectForKey:@"major"];
-    NSString *minor = [defaults objectForKey:@"minor"];
-    if(uuid.length > 0 && major.length > 0 && minor.length > 0) {
+    if(uuid.length > 0) {
         // 端末内部に保存したパラメータを使ってiBeaconPeripheralを初期化
-        _peripheral = [[iBeaconPeripheral alloc] initWithUUID:uuid major:[major integerValue] minor:[minor integerValue]];
+        _peripheral = [[iBeaconPeripheral alloc] initWithUUID:uuid major:nil minor:nil];
         _peripheral.delegate = self;
     } else {
         // デフォルトパラメータでiBeaconPeripheralを初期化

@@ -13,9 +13,9 @@
 // デフォルトのUUID
 static NSString *const defaultUUID = @"33B7DD31-897F-4357-B41E-0F1CE208DBCB";
 // デフォルトのmajor
-static NSInteger const defaultMajor = 0;
+static NSNumber *const defaultMajor = 0;
 // デフォルトのminor
-static NSInteger const defaultMinor = 0;
+static NSNumber *const defaultMinor = 0;
 
 @interface iBeaconPeripheral()<CBPeripheralManagerDelegate>
 
@@ -36,7 +36,7 @@ static NSInteger const defaultMinor = 0;
 }
 
 // iBeaconのプロパティを付与する初期化処理
-- (id)initWithUUID:(NSString *)uuid major:(NSInteger)major minor:(NSInteger)minor
+- (id)initWithUUID:(NSString *)uuid major:(NSNumber *)major minor:(NSNumber *)minor
 {
     self = [super init];
     
@@ -49,7 +49,9 @@ static NSInteger const defaultMinor = 0;
         // Bundleの取得
         NSBundle *bundle = [NSBundle mainBundle];
         NSString *bid = [bundle bundleIdentifier];
-        self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:self.proximityUUID major:major minor:minor identifier:bid];
+        NSInteger majorInt = [major integerValue];
+        NSInteger minorInt = [minor integerValue];
+        self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:self.proximityUUID major:majorInt minor:minorInt identifier:bid];
     }
     
     return self;
