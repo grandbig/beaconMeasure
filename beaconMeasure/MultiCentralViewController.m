@@ -32,18 +32,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    // 端末内部に保存したパラメータを取得
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *uuid = [defaults objectForKey:@"uuid"];
-    if(uuid.length > 0) {
-        // 端末内部に保存したパラメータを使ってiBeaconCentralを初期化
-        _central = [[iBeaconCentral alloc] initWithUUID:uuid];
-        _central.delegate = self;
-    } else {
-        // デフォルトパラメータでiBeaconCentralを初期化
-        _central = [[iBeaconCentral alloc] init];
-        _central.delegate = self;
-    }
+    // デフォルトパラメータでiBeaconCentralを初期化
+    _central = [[iBeaconCentral alloc] init];
+    _central.delegate = self;
     
     // テーブルビューのデリゲート設定
     _multiBeaconTableView.delegate = self;

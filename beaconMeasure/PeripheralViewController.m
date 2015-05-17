@@ -29,18 +29,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    // 端末内部に保存したパラメータを取得
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *uuid = [defaults objectForKey:@"uuid"];
-    if(uuid.length > 0) {
-        // 端末内部に保存したパラメータを使ってiBeaconPeripheralを初期化
-        _peripheral = [[iBeaconPeripheral alloc] initWithUUID:uuid major:nil minor:nil];
-        _peripheral.delegate = self;
-    } else {
-        // デフォルトパラメータでiBeaconPeripheralを初期化
-        _peripheral = [[iBeaconPeripheral alloc] init];
-        _peripheral.delegate = self;
-    }
+    // デフォルトパラメータでiBeaconPeripheralを初期化
+    _peripheral = [[iBeaconPeripheral alloc] init];
+    _peripheral.delegate = self;
     
     _flag = NO;
     _bmFontView.text = [self getSleepingString];

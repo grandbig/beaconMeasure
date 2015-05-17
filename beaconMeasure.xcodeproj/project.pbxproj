@@ -15,7 +15,6 @@
 		6E2C9F151AE40A2700F04543 /* MultiCentralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C9F141AE40A2700F04543 /* MultiCentralViewController.m */; };
 		6E53CE6F1AE15461005567C7 /* CentralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E53CE6E1AE15461005567C7 /* CentralViewController.m */; };
 		6E53CE721AE154C4005567C7 /* PeripheralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E53CE711AE154C4005567C7 /* PeripheralViewController.m */; };
-		6E53CE751AE15508005567C7 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E53CE741AE15508005567C7 /* SettingViewController.m */; };
 		6E53CE771AE25E83005567C7 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E53CE761AE25E83005567C7 /* back.png */; };
 		6EA028F51AEA8394001AD014 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EA028F41AEA8394001AD014 /* logo.png */; };
 		6EA2D9DC1AEA053100E535A4 /* update.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EA2D9DB1AEA053100E535A4 /* update.png */; };
@@ -65,8 +64,6 @@
 		6E53CE6E1AE15461005567C7 /* CentralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CentralViewController.m; sourceTree = "<group>"; };
 		6E53CE701AE154C4005567C7 /* PeripheralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeripheralViewController.h; sourceTree = "<group>"; };
 		6E53CE711AE154C4005567C7 /* PeripheralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeripheralViewController.m; sourceTree = "<group>"; };
-		6E53CE731AE15508005567C7 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		6E53CE741AE15508005567C7 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		6E53CE761AE25E83005567C7 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		6EA028F41AEA8394001AD014 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = beaconMeasure/Resources/splash/logo.png; sourceTree = SOURCE_ROOT; };
 		6EA2D9DB1AEA053100E535A4 /* update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = update.png; sourceTree = "<group>"; };
@@ -149,8 +146,6 @@
 				6E53CE6E1AE15461005567C7 /* CentralViewController.m */,
 				6E53CE701AE154C4005567C7 /* PeripheralViewController.h */,
 				6E53CE711AE154C4005567C7 /* PeripheralViewController.m */,
-				6E53CE731AE15508005567C7 /* SettingViewController.h */,
-				6E53CE741AE15508005567C7 /* SettingViewController.m */,
 				6E2C9F0B1AE3FD8700F04543 /* infoViewController.h */,
 				6E2C9F0C1AE3FD8700F04543 /* infoViewController.m */,
 				6E2C9F101AE406BD00F04543 /* LicenceViewController.h */,
@@ -434,7 +429,6 @@
 				6EA57C781ADA877900D31AC7 /* ViewController.m in Sources */,
 				6E2C9F121AE406BD00F04543 /* LicenceViewController.m in Sources */,
 				6EA57C981ADAA1D500D31AC7 /* iBeaconCentral.m in Sources */,
-				6E53CE751AE15508005567C7 /* SettingViewController.m in Sources */,
 				6EA57C751ADA877900D31AC7 /* AppDelegate.m in Sources */,
 				6EA57CE81ADAB8B200D31AC7 /* CHTumblrMenuView.m in Sources */,
 				6E2C9F0D1AE3FD8700F04543 /* infoViewController.m in Sources */,
