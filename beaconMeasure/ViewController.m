@@ -44,10 +44,6 @@
         NSLog(@"Search selected");
         [self performSegueWithIdentifier:@"multiBeaconSegue" sender:self];
     }];
-    [menuView addMenuItemWithTitle:NSLocalizedString(@"settings", nil) andIcon:[UIImage imageNamed:@"settings.png"] andSelectedBlock:^{
-        NSLog(@"Setting selected");
-        [self performSegueWithIdentifier:@"SettingSegue" sender:self];
-    }];
     [menuView addMenuItemWithTitle:NSLocalizedString(@"about", nil) andIcon:[UIImage imageNamed:@"info.png"] andSelectedBlock:^{
         NSLog(@"About selected");
         [self performSegueWithIdentifier:@"infoSegue" sender:self];
